@@ -16,7 +16,7 @@ import java.util.Date;
 @Entity
 @AllArgsConstructor
 @Builder
-@Data
+
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Reservation {
