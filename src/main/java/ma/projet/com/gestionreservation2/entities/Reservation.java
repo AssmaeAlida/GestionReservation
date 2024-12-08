@@ -25,17 +25,16 @@ public class Reservation {
     private Long id;
     private String customerName;
     @Temporal(TemporalType.DATE)
-    private Date startDate;
+    private String startDate;
     @Temporal(TemporalType.DATE)
-    private Date endDate;
+    private String endDate;
     private String roomPreference;
 
-    // Si vous ne souhaitez pas utiliser Lombok, ajoutez manuellement les getters et setters :
 
     public Reservation() {
     }
 
-    public Reservation(String customerName, Date startDate, Date endDate, String roomPreference) {
+    public Reservation(String customerName, String startDate, String endDate, String roomPreference) {
         this.customerName = customerName;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -58,19 +57,19 @@ public class Reservation {
         this.customerName = customerName;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 

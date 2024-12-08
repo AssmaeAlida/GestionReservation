@@ -78,8 +78,8 @@ public class ReservationGraphQLService {
 
         // Mettez à jour les champs de la réservation existante
         existingReservation.setCustomerName(customerName);
-        existingReservation.setStartDate(start);
-        existingReservation.setEndDate(end);
+        existingReservation.setStartDate(String.valueOf(start));
+        existingReservation.setEndDate(String.valueOf(end));
         existingReservation.setRoomPreference(roomPreference);
 
         // Sauvegardez et retournez la réservation mise à jour
