@@ -27,6 +27,14 @@ public class ReservationService {
         return reservationRepository.save(reservation);
     }
 
+    public Reservation updateReservation(Long id, Reservation reservation) {
+        if (reservationRepository.existsById(id)) {
+            reservation.setId(id);
+            return reservationRepository.save(reservation);
+        }
+        return null;
+    }
+
     public boolean deleteReservation(Long id) {
         if (reservationRepository.existsById(id)) {
             reservationRepository.deleteById(id);

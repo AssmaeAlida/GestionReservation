@@ -50,6 +50,16 @@ public final class ReservationOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SaveReservationResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateReservationRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateReservationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateReservationResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateReservationResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_DeleteReservationRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -79,19 +89,24 @@ public final class ReservationOuterClass {
       "servation\";\n\026SaveReservationRequest\022!\n\013r" +
       "eservation\030\001 \001(\0132\014.Reservation\"<\n\027SaveRe" +
       "servationResponse\022!\n\013reservation\030\001 \001(\0132\014" +
-      ".Reservation\"&\n\030DeleteReservationRequest" +
-      "\022\n\n\002id\030\001 \001(\003\",\n\031DeleteReservationRespons" +
-      "e\022\017\n\007success\030\001 \001(\0102\304\002\n\022ReservationServic" +
-      "e\022M\n\022getAllReservations\022\032.GetAllReservat" +
-      "ionsRequest\032\033.GetAllReservationsResponse" +
-      "\022M\n\022getReservationById\022\032.GetReservationB" +
-      "yIdRequest\032\033.GetReservationByIdResponse\022" +
-      "D\n\017saveReservation\022\027.SaveReservationRequ" +
-      "est\032\030.SaveReservationResponse\022J\n\021deleteR" +
-      "eservation\022\031.DeleteReservationRequest\032\032." +
-      "DeleteReservationResponseB4\n0ma.projet.c" +
-      "om.gestionreservation2.web.grpc.stubsP\001b" +
-      "\006proto3"
+      ".Reservation\"I\n\030UpdateReservationRequest" +
+      "\022\n\n\002id\030\001 \001(\003\022!\n\013reservation\030\002 \001(\0132\014.Rese" +
+      "rvation\">\n\031UpdateReservationResponse\022!\n\013" +
+      "reservation\030\001 \001(\0132\014.Reservation\"&\n\030Delet" +
+      "eReservationRequest\022\n\n\002id\030\001 \001(\003\",\n\031Delet" +
+      "eReservationResponse\022\017\n\007success\030\001 \001(\0102\220\003" +
+      "\n\022ReservationService\022M\n\022getAllReservatio" +
+      "ns\022\032.GetAllReservationsRequest\032\033.GetAllR" +
+      "eservationsResponse\022M\n\022getReservationByI" +
+      "d\022\032.GetReservationByIdRequest\032\033.GetReser" +
+      "vationByIdResponse\022D\n\017saveReservation\022\027." +
+      "SaveReservationRequest\032\030.SaveReservation" +
+      "Response\022J\n\021deleteReservation\022\031.DeleteRe" +
+      "servationRequest\032\032.DeleteReservationResp" +
+      "onse\022J\n\021updateReservation\022\031.UpdateReserv" +
+      "ationRequest\032\032.UpdateReservationResponse" +
+      "B4\n0ma.projet.com.gestionreservation2.we" +
+      "b.grpc.stubsP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -139,14 +154,26 @@ public final class ReservationOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SaveReservationResponse_descriptor,
         new java.lang.String[] { "Reservation", });
-    internal_static_DeleteReservationRequest_descriptor =
+    internal_static_UpdateReservationRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
+    internal_static_UpdateReservationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateReservationRequest_descriptor,
+        new java.lang.String[] { "Id", "Reservation", });
+    internal_static_UpdateReservationResponse_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_UpdateReservationResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateReservationResponse_descriptor,
+        new java.lang.String[] { "Reservation", });
+    internal_static_DeleteReservationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(9);
     internal_static_DeleteReservationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DeleteReservationRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_DeleteReservationResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_DeleteReservationResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DeleteReservationResponse_descriptor,

@@ -155,6 +155,38 @@ public final class ReservationServiceGrpc {
      return getDeleteReservationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationRequest,
+      ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationResponse> getUpdateReservationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "updateReservation",
+      requestType = ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationRequest.class,
+      responseType = ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationRequest,
+      ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationResponse> getUpdateReservationMethod() {
+    io.grpc.MethodDescriptor<ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationRequest, ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationResponse> getUpdateReservationMethod;
+    if ((getUpdateReservationMethod = ReservationServiceGrpc.getUpdateReservationMethod) == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getUpdateReservationMethod = ReservationServiceGrpc.getUpdateReservationMethod) == null) {
+          ReservationServiceGrpc.getUpdateReservationMethod = getUpdateReservationMethod = 
+              io.grpc.MethodDescriptor.<ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationRequest, ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "ReservationService", "updateReservation"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new ReservationServiceMethodDescriptorSupplier("updateReservation"))
+                  .build();
+          }
+        }
+     }
+     return getUpdateReservationMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -210,6 +242,13 @@ public final class ReservationServiceGrpc {
       asyncUnimplementedUnaryCall(getDeleteReservationMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void updateReservation(ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationRequest request,
+        io.grpc.stub.StreamObserver<ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateReservationMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -240,6 +279,13 @@ public final class ReservationServiceGrpc {
                 ma.projet.com.gestionreservation2.web.grpc.stubs.DeleteReservationRequest,
                 ma.projet.com.gestionreservation2.web.grpc.stubs.DeleteReservationResponse>(
                   this, METHODID_DELETE_RESERVATION)))
+          .addMethod(
+            getUpdateReservationMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationRequest,
+                ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationResponse>(
+                  this, METHODID_UPDATE_RESERVATION)))
           .build();
     }
   }
@@ -293,6 +339,14 @@ public final class ReservationServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getDeleteReservationMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void updateReservation(ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationRequest request,
+        io.grpc.stub.StreamObserver<ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateReservationMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -339,6 +393,13 @@ public final class ReservationServiceGrpc {
     public ma.projet.com.gestionreservation2.web.grpc.stubs.DeleteReservationResponse deleteReservation(ma.projet.com.gestionreservation2.web.grpc.stubs.DeleteReservationRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteReservationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationResponse updateReservation(ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateReservationMethod(), getCallOptions(), request);
     }
   }
 
@@ -391,12 +452,21 @@ public final class ReservationServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getDeleteReservationMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationResponse> updateReservation(
+        ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateReservationMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ALL_RESERVATIONS = 0;
   private static final int METHODID_GET_RESERVATION_BY_ID = 1;
   private static final int METHODID_SAVE_RESERVATION = 2;
   private static final int METHODID_DELETE_RESERVATION = 3;
+  private static final int METHODID_UPDATE_RESERVATION = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -430,6 +500,10 @@ public final class ReservationServiceGrpc {
         case METHODID_DELETE_RESERVATION:
           serviceImpl.deleteReservation((ma.projet.com.gestionreservation2.web.grpc.stubs.DeleteReservationRequest) request,
               (io.grpc.stub.StreamObserver<ma.projet.com.gestionreservation2.web.grpc.stubs.DeleteReservationResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_RESERVATION:
+          serviceImpl.updateReservation((ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationRequest) request,
+              (io.grpc.stub.StreamObserver<ma.projet.com.gestionreservation2.web.grpc.stubs.UpdateReservationResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -496,6 +570,7 @@ public final class ReservationServiceGrpc {
               .addMethod(getGetReservationByIdMethod())
               .addMethod(getSaveReservationMethod())
               .addMethod(getDeleteReservationMethod())
+              .addMethod(getUpdateReservationMethod())
               .build();
         }
       }

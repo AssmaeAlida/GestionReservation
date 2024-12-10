@@ -32,7 +32,14 @@ message SaveReservationRequest {
 message SaveReservationResponse {
   Reservation reservation = 1;
 }
+message UpdateReservationRequest {
+  int64 id = 1;
+  Reservation reservation = 2;
+}
 
+message UpdateReservationResponse {
+  Reservation reservation = 1;
+}
 message DeleteReservationRequest {
   int64 id = 1;
 }
@@ -46,4 +53,6 @@ service ReservationService {
   rpc getReservationById(GetReservationByIdRequest) returns (GetReservationByIdResponse);
   rpc saveReservation(SaveReservationRequest) returns (SaveReservationResponse);
   rpc deleteReservation(DeleteReservationRequest) returns (DeleteReservationResponse);
+  rpc updateReservation(UpdateReservationRequest) returns (UpdateReservationResponse);
+
 }
